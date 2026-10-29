@@ -1,0 +1,881 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with NextGen Cyber Skills Hub — contact us to learn more about our cybersecurity workshops, mentorship programs, and training opportunities in South Africa.">
+    <meta name="keywords" content="contact cybersecurity, NextGen Cyber contact, cyber training South Africa, workshops enquiry, cybersecurity mentorship, Cape Town tech hub, learn cyber skills contact">
+    <meta name="author" content="MKM">
+    
+    <title>Contact Us - NextGen Cyber Skills Hub</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- EXISTING FORM JAVASCRIPT -->
+    <script src="/script.js" defer></script>
+
+    <!-- CONFETTI -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+
+        /* =========================
+           CONTACT PAGE
+        ========================= */
+
+        body {
+            background-color: #000;
+            margin: 0;
+            color: aliceblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar li {
+            list-style: none;
+        }
+
+        .contact {
+            padding: 70px 8% 80px;
+        }
+
+        .contact-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .contact h1 {
+            font-family: "RobotRocket", sans-serif;
+            font-size: 52px;
+            color: #009dff;
+            letter-spacing: 2px;
+            text-align: center;
+            margin: 0 0 15px;
+        }
+
+        .contact > p {
+            font-size: 18px;
+            color: #bdbdbd;
+            line-height: 1.7;
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 55px;
+        }
+
+        /* =========================
+           CONTACT LAYOUT
+        ========================= */
+
+        .contact-content {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* =========================
+           LEFT SIDE
+        ========================= */
+
+        .contact-info h2 {
+            font-family: "RobotRocket", sans-serif;
+            color: aliceblue;
+            font-size: 30px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .contact-info > p {
+            color: #bdbdbd;
+            line-height: 1.7;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            background: #0d0d0d;
+            border: 1px solid #222;
+            border-left: 3px solid #009dff;
+            padding: 18px;
+            margin-bottom: 18px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .info-card:hover {
+            border-color: #009dff;
+            transform: translateX(5px);
+            box-shadow: 0 0 18px rgba(0, 157, 255, 0.2);
+        }
+
+        .info-icon {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #009dff;
+            border-radius: 50%;
+            color: #009dff;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .info-card h3 {
+            margin: 0 0 5px;
+            color: aliceblue;
+            font-size: 16px;
+        }
+
+        .info-card p {
+            margin: 0;
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* =========================
+           CONTACT FORM
+        ========================= */
+
+        #myForm {
+            padding: 35px;
+            background: #0d0d0d;
+            border-radius: 10px;
+            border: 1px solid #222;
+            box-shadow: 0 0 25px rgba(0, 157, 255, 0.08);
+            color: aliceblue;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group > label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #d0d0d0;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #171717;
+            color: aliceblue;
+            box-sizing: border-box;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #009dff;
+            box-shadow: 0 0 8px rgba(0, 157, 255, 0.25);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        /* =========================
+           CHECKBOXES
+        ========================= */
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-top: 10px;
+        }
+
+        .checkbox-item {
+            display: flex !important;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            color: #aaa !important;
+            font-size: 14px !important;
+            font-weight: normal !important;
+        }
+
+        .checkbox-item input {
+            accent-color: #009dff;
+        }
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .button-submit,
+        .button-reset {
+            flex: 1;
+            min-height: 40px;
+            border-radius: 6px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .button-submit {
+            background-color: #009dff;
+            color: white;
+        }
+
+        .button-submit:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .button-reset {
+            background-color: #222;
+            color: white;
+        }
+
+        .button-reset:hover {
+            background-color: #333;
+        }
+
+        /* =========================
+           CONFIRMATION MODAL
+        ========================= */
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: #171717;
+            border: 2px solid #009dff;
+            box-shadow: 0 0 5px #009dff, 0 0 20px #009dff;
+            padding: 25px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           BOTTOM MESSAGE
+        ========================= */
+
+        .contact-cta {
+            max-width: 1000px;
+            margin: 70px auto 0;
+            padding: 35px;
+            text-align: center;
+            border: 1px solid #222;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #080808, #101010);
+        }
+
+        .contact-cta h3 {
+            font-family: "RobotRocket", sans-serif;
+            color: #009dff;
+            font-size: 30px;
+            margin: 0 0 10px;
+        }
+
+        .contact-cta p {
+            color: #aaa;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           HAMBURGER MENU
+        ========================= */
+
+        .navbar {
+            position: relative;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: 2px solid #009DFF;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background: #009DFF;
+            border-radius: 3px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* =========================
+           TABLET / MOBILE CONTENT
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .contact {
+                padding: 50px 5%;
+            }
+
+            .contact h1 {
+                font-size: 40px;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            #myForm {
+                padding: 25px;
+            }
+        }
+
+        /* =========================
+           MOBILE NAVIGATION
+        ========================= */
+
+        @media (max-width: 767px) {
+
+            .navbar {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 15px 20px;
+                min-height: 80px;
+            }
+
+            .logo {
+                order: 1;
+            }
+
+            .logo img {
+                width: 90px;
+            }
+
+            .menu-toggle {
+                display: flex;
+                order: 2;
+                margin-left: auto;
+                z-index: 1001;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                left: 0;
+                right: 0;
+                background: #111;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 0;
+                margin: 0;
+                z-index: 1000;
+            }
+
+            .nav-left {
+                top: 100%;
+                border-top: 1px solid #009DFF;
+            }
+
+            .nav-right {
+                top: calc(100% + 138px);
+                border-bottom: 2px solid #009DFF;
+            }
+
+            .nav-links.menu-open {
+                display: flex;
+            }
+
+            .nav-links li {
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 14px 20px;
+                font-size: 15px;
+            }
+
+            .nav-links a:hover {
+                background: #1b1b1b;
+            }
+
+            .checkbox-group {
+                flex-wrap: wrap;
+            }
+
+            .form-actions {
+                flex-wrap: wrap;
+            }
+
+            .contact-cta {
+                padding: 25px 20px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER & NAVBAR
+========================= -->
+
+<header>
+    <nav class="navbar" aria-label="Main navigation">
+
+        <!-- LEFT NAVIGATION -->
+        <ul class="nav-links nav-left" id="nav-left">
+
+            <li>
+                <a href="/html/index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="/html/Workshops.html">Workshops</a>
+            </li>
+
+            <li>
+                <a href="/html/Mentors.html">Mentors</a>
+            </li>
+
+        </ul>
+
+        <!-- CENTRED LOGO -->
+        <a href="/html/home.html" class="logo">
+            <img src="/images/NEXTGEN2.png"
+                 alt="NextGen Cyber Logo">
+        </a>
+
+        <!-- RIGHT NAVIGATION -->
+        <ul class="nav-links nav-right" id="nav-right">
+
+            <li>
+                <a href="/html/SuccessStories.html">
+                    Success Stories
+                </a>
+            </li>
+
+            <li>
+                <a href="/html/FAQ.html">FAQ</a>
+            </li>
+
+            <li>
+                <a href="/html/Contact.html"
+                   class="active"
+                   aria-current="page">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+        <!-- HAMBURGER BUTTON -->
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="nav-left nav-right">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </nav>
+</header>
+
+
+<!-- =========================
+     CONTACT SECTION
+========================= -->
+
+<main>
+
+    <section class="contact">
+
+        <h1>GET IN TOUCH</h1>
+
+        <p>
+            Have a question, need more information, or ready to start your
+            cybersecurity journey? We would love to hear from you.
+        </p>
+
+        <div class="contact-content">
+
+            <!-- LEFT SIDE -->
+            <aside class="contact-info">
+
+                <h2>Let's Connect</h2>
+
+                <p>
+                    At NextGen Cyber Skills Hub, we are passionate about helping
+                    learners build the skills and confidence they need for the
+                    digital future.
+                </p>
+
+                <article class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+
+                    <div>
+                        <h3>Email Us</h3>
+                        <p>Get in touch with our team</p>
+                    </div>
+                </article>
+
+                <article class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-location-dot"></i>
+                    </div>
+
+                    <div>
+                        <h3>South Africa</h3>
+                        <p>Connecting learners with opportunities</p>
+                    </div>
+                </article>
+
+                <article class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+
+                    <div>
+                        <h3>Cyber Support</h3>
+                        <p>We're here to help you take the next step</p>
+                    </div>
+                </article>
+
+            </aside>
+
+
+            <!-- =========================
+                 CONTACT FORM
+            ========================= -->
+
+            <form id="myForm"
+                  action="#"
+                  method="post"
+                  onsubmit="validateForm(event)">
+
+                <div class="form-group">
+                    <label for="firstname">First Name</label>
+
+                    <input
+                        type="text"
+                        id="firstname"
+                        name="firstname"
+                        required
+                        placeholder="e.g. Jenifer">
+                </div>
+
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+
+                    <input
+                        type="text"
+                        id="lastname"
+                        name="lastname"
+                        required
+                        placeholder="e.g. Taylor">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        placeholder="e.g. jenifertaylor67@gmail.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="workshop">Choose a workshop</label>
+
+                    <select id="workshop" name="workshop">
+
+                        <option>Hackers' Tricks Explained | 5 October 2026</option>
+                        <option>Spotting Suspicious Activity | 8 October 2026</option>
+                        <option>What To Do After a Breach | 12 October 2026</option>
+                        <option>Network Defense Basics | 15 October 2026</option>
+                        <option>Cloud Security Essentials | 17 October 2026</option>
+                        <option>Incident Response Simulation | 20 October 2026</option>
+                        <option>Threat Hunting Deep Dive | 22 October 2026</option>
+                        <option>Compliance &amp; Risk Management | 25 October 2026</option>
+                        <option>Advanced IAM Strategies | 28 October 2026</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+
+                    <label>Notifications</label>
+
+                    <div class="checkbox-group">
+
+                        <label class="checkbox-item">
+                            <input type="checkbox"
+                                   name="services"
+                                   value="yes"
+                                   checked>
+                            YES
+                        </label>
+
+                        <label class="checkbox-item">
+                            <input type="checkbox"
+                                   name="services"
+                                   value="no">
+                            NO
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="comments">
+                        Comments / Suggestions
+                    </label>
+
+                    <textarea
+                        id="comments"
+                        name="Comments/Suggestions"
+                        rows="4"></textarea>
+
+                </div>
+
+                <div class="form-actions">
+
+                    <button type="submit" class="button-submit">
+                        SUBMIT
+                    </button>
+
+                    <button type="reset" class="button-reset">
+                        RESET
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONFIRMATION MODAL
+    ========================= -->
+
+    <div id="confirmationModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" role="button"
+                  tabindex="0" aria-label="Close confirmation">
+                &times;
+            </span>
+
+            <h3>Registration Successful!</h3>
+
+            <p id="confirmationMessage"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         BOTTOM CTA
+    ========================= -->
+
+    <section class="contact-cta">
+
+        <h3>READY TO TAKE THE NEXT STEP?</h3>
+
+        <p>
+            Explore our workshops, meet our mentors and discover opportunities
+            designed to help you build your future in cybersecurity.
+        </p>
+
+    </section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <h3>FOLLOW US</h3>
+
+        <div class="social-icons">
+
+            <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="#" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+
+            <a href="#" aria-label="X">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+
+        </div>
+
+        <nav class="footer-links" aria-label="Footer navigation">
+
+            <a href="/html/index.html">Home</a>
+            <a href="/html/Workshops.html">Workshops</a>
+            <a href="/html/Mentors.html">Mentors</a>
+            <a href="/html/SuccessStories.html">Success Stories</a>
+            <a href="/html/FAQ.html">FAQ</a>
+            <a href="/html/Contact.html">Contact</a>
+
+        </nav>
+
+    </div>
+
+    <div class="copyright">
+        ©2026; Designed By MKM
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     HAMBURGER JAVASCRIPT
+========================= -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuButton = document.querySelector(".menu-toggle");
+    const navLeft = document.querySelector(".nav-left");
+    const navRight = document.querySelector(".nav-right");
+
+    if (!menuButton || !navLeft || !navRight) {
+        return;
+    }
+
+    function closeMobileMenu() {
+
+        navLeft.classList.remove("menu-open");
+        navRight.classList.remove("menu-open");
+
+        menuButton.setAttribute("aria-expanded", "false");
+    }
+
+    menuButton.addEventListener("click", function () {
+
+        const isOpen =
+            menuButton.getAttribute("aria-expanded") === "true";
+
+        navLeft.classList.toggle("menu-open", !isOpen);
+        navRight.classList.toggle("menu-open", !isOpen);
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            String(!isOpen)
+        );
+
+    });
+
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth >= 768) {
+            closeMobileMenu();
+        }
+
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(function (link) {
+
+        link.addEventListener("click", closeMobileMenu);
+
+    });
+
+});
+</script>
+
+</body>
+</html>

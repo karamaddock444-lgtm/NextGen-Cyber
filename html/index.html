@@ -1,0 +1,684 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CORE META TAGS -->
+    <title>NextGen Cyber Skills Hub - Empowering Future Cyber Defenders</title>
+
+    <meta name="description" content="NextGen Cyber Skills Hub — Hands-on training, mentorship, and community for aspiring cybersecurity and tech professionals. Build future-ready skills with our workshops, success stories, and expert mentors.">
+
+    <meta name="keywords" content="cybersecurity training, cyber skills hub, ethical hacking, AI security, cyber defence, tech mentorship, coding workshops, Cape Town tech, learn cybersecurity South Africa">
+
+    <meta name="author" content="MKM">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- EXISTING JAVASCRIPT -->
+    <script src="/script.js" defer></script>
+
+    <style>
+
+        /* =========================
+           HAMBURGER MENU
+        ========================= */
+
+        .navbar {
+            position: relative;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+
+            width: 44px;
+            height: 44px;
+
+            background: transparent;
+            border: 2px solid #009DFF;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background: #009DFF;
+            border-radius: 3px;
+            transition: transform 0.3s ease,
+                        opacity 0.3s ease;
+        }
+
+        .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* =========================
+           MOBILE NAVIGATION
+        ========================= */
+
+        @media (max-width: 767px) {
+
+            .navbar {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 15px 20px;
+                min-height: 80px;
+            }
+
+            .logo {
+                order: 1;
+            }
+
+            .logo img {
+                width: 90px;
+            }
+
+            .menu-toggle {
+                display: flex;
+                order: 2;
+                margin-left: auto;
+                z-index: 1001;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                left: 0;
+                right: 0;
+
+                background: #111;
+
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 0;
+                margin: 0;
+
+                z-index: 1000;
+            }
+
+            .nav-left {
+                top: 100%;
+                border-top: 1px solid #009DFF;
+            }
+
+            .nav-right {
+                top: calc(100% + 138px);
+                border-bottom: 2px solid #009DFF;
+            }
+
+            .nav-links.menu-open {
+                display: flex;
+            }
+
+            .nav-links li {
+                list-style: none;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 14px 20px;
+                font-size: 15px;
+            }
+
+            .nav-links a:hover {
+                background: #1b1b1b;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- =========================
+     COOKIE CONSENT POPUP
+========================= -->
+
+<div
+    id="cookiesPopup"
+    class="cookies-popup"
+    role="dialog"
+    aria-label="Cookie consent"
+    aria-describedby="cookieMessage">
+
+    <p id="cookieMessage">
+        We use cookies to improve your experience.
+        By continuing, you agree to our cookie policy.
+    </p>
+
+    <p class="t-c">
+        <a href="/html/t&amp;c.html">
+            Terms &amp; Conditions
+        </a>
+    </p>
+
+    <button id="acceptCookies" type="button">
+        Accept Cookies
+    </button>
+
+    <button id="declineCookies" type="button">
+        Decline
+    </button>
+
+</div>
+
+
+<!-- =========================
+     HEADER AND NAVIGATION
+========================= -->
+
+<header>
+
+    <nav class="navbar" aria-label="Main navigation">
+
+        <!-- LEFT NAVIGATION LINKS -->
+        <ul class="nav-links nav-left" id="nav-left">
+
+            <li>
+                <a href="/html/index.html"
+                   class="active"
+                   aria-current="page">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="/html/Workshops.html">
+                    Workshops
+                </a>
+            </li>
+
+            <li>
+                <a href="/html/Mentors.html">
+                    Mentors
+                </a>
+            </li>
+
+        </ul>
+
+        <!-- CENTRED LOGO -->
+        <a href="/html/index.html" class="logo">
+
+            <img
+                src="/images/NEXTGEN2.png"
+                alt="NextGen Cyber Skills Hub logo">
+
+        </a>
+
+        <!-- RIGHT NAVIGATION LINKS -->
+        <ul class="nav-links nav-right" id="nav-right">
+
+            <li>
+                <a href="/html/SuccessStories.html">
+                    Success Stories
+                </a>
+            </li>
+
+            <li>
+                <a href="/html/FAQ.html">
+                    FAQ
+                </a>
+            </li>
+
+            <li>
+                <a href="/html/Contact.html">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+        <!-- HAMBURGER BUTTON -->
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="nav-left nav-right">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<main>
+
+    <!-- =========================
+         HERO SECTION
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <h1>
+                    WELCOME TO NEXTGEN CYBER
+                </h1>
+
+                <p>
+                    Empowering learners with future-ready skills.
+                </p>
+
+                <a href="#workshops" class="btn small">
+                    Get Started
+                </a>
+
+                <a href="/html/Workshops.html" class="btn small">
+                    View Services
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT SECTION
+    ========================= -->
+
+    <section class="about">
+
+        <h2>About Us</h2>
+
+        <p class="about-intro">
+            We empower the next generation of cyber defenders
+            through hands-on training, mentorship, and innovation.
+        </p>
+
+        <div>
+
+            <p>
+                NextGen Cyber is a community skills hub where
+                the old meets the new. We bring together
+                experienced software designers, developers,
+                engineers, and the next generation of aspiring
+                tech professionals to create an environment
+                where knowledge, creativity, and innovation
+                can thrive.
+            </p>
+
+            <p>
+                Our goal is to create a space where innovative
+                ideas can grow and where companies can discover
+                the next generation of talented developers,
+                designers, and engineers.
+            </p>
+
+            <p>
+                NextGen Cyber is more than just a skills hub.
+                It is a community where developers can connect,
+                share their ambitions, exchange knowledge,
+                and support one another in an industry that
+                is constantly evolving.
+            </p>
+
+            <p>
+                We want the next generation of creators to feel
+                that they belong - not like another number in
+                the industry, but like future leaders and
+                innovators who can make an impact both
+                nationally and internationally.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         WORKSHOPS
+    ========================= -->
+
+    <section class="workshops" id="workshops">
+
+        <h2>Our Workshops</h2>
+
+        <div class="row">
+
+            <article class="card">
+
+                <h3>Cybersecurity Basics</h3>
+
+                <p>
+                    Learn the fundamentals of protecting
+                    systems and networks.
+                </p>
+
+                <footer class="card-footer">
+
+                    <a href="/html/Workshops.html"
+                       class="btn small">
+                        Explore
+                    </a>
+
+                </footer>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>AI in Security</h3>
+
+                <p>
+                    Discover how artificial intelligence
+                    enhances cyber defense.
+                </p>
+
+                <footer class="card-footer">
+
+                    <a href="/html/Workshops.html"
+                       class="btn small">
+                        Explore
+                    </a>
+
+                </footer>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>Ethical Hacking</h3>
+
+                <p>
+                    Hands-on training to identify and
+                    fix vulnerabilities.
+                </p>
+
+                <footer class="card-footer">
+
+                    <a href="/html/Workshops.html"
+                       class="btn small">
+                        Explore
+                    </a>
+
+                </footer>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SUCCESS STORIES
+    ========================= -->
+
+    <section class="success">
+
+        <h2>Success Stories</h2>
+
+        <div class="row">
+
+            <article class="card">
+
+                <h3>Student A</h3>
+
+                <p>
+                    Secured an internship at a global
+                    cybersecurity firm.
+                </p>
+
+                <footer class="card-footer">
+
+                    <a href="/html/SuccessStories.html"
+                       class="btn small">
+                        Read More
+                    </a>
+
+                </footer>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>Student B</h3>
+
+                <p>
+                    Developed an AI-powered intrusion
+                    detection system.
+                </p>
+
+                <footer class="card-footer">
+
+                    <a href="/html/SuccessStories.html"
+                       class="btn small">
+                        Read More
+                    </a>
+
+                </footer>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>Student C</h3>
+
+                <p>
+                    Presented research at an international
+                    cyber conference.
+                </p>
+
+                <footer class="card-footer">
+
+                    <a href="/html/SuccessStories.html"
+                       class="btn small">
+                        Read More
+                    </a>
+
+                </footer>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EVENTS
+    ========================= -->
+
+    <section class="events">
+
+        <h2>Upcoming Events</h2>
+
+        <ul class="event-list">
+
+            <li>
+                <strong>
+                    Cyber Defense Summit 2026
+                </strong>
+
+                <time datetime="2026-10-12">
+                    October 12
+                </time>
+            </li>
+
+            <li>
+                <strong>
+                    AI Security Hackathon
+                </strong>
+
+                <time datetime="2026-11-05">
+                    November 5
+                </time>
+            </li>
+
+            <li>
+                <strong>
+                    Global Cyber Awareness Week
+                </strong>
+
+                <time datetime="2026-12-01">
+                    December 1
+                </time>
+            </li>
+
+        </ul>
+
+        <a href="/html/Workshops.html" class="btn small">
+            View All Events
+        </a>
+
+    </section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <h3>FOLLOW US</h3>
+
+        <div class="social-icons">
+
+            <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="#" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+
+            <a href="#" aria-label="X">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+
+        </div>
+
+        <nav class="footer-links"
+             aria-label="Footer navigation">
+
+            <a href="/html/index.html">Home</a>
+            <a href="/html/Workshops.html">Workshops</a>
+            <a href="/html/Mentors.html">Mentors</a>
+            <a href="/html/SuccessStories.html">Success Stories</a>
+            <a href="/html/FAQ.html">FAQ</a>
+            <a href="/html/Contact.html">Contact</a>
+
+        </nav>
+
+    </div>
+
+    <div class="copyright">
+        &copy; 2026; Designed By MKM
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     HAMBURGER MENU JAVASCRIPT
+========================= -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuButton = document.querySelector(".menu-toggle");
+    const navLeft = document.querySelector(".nav-left");
+    const navRight = document.querySelector(".nav-right");
+
+    if (!menuButton || !navLeft || !navRight) {
+        return;
+    }
+
+    function closeMobileMenu() {
+
+        navLeft.classList.remove("menu-open");
+        navRight.classList.remove("menu-open");
+
+        menuButton.setAttribute("aria-expanded", "false");
+    }
+
+    menuButton.addEventListener("click", function () {
+
+        const isOpen =
+            menuButton.getAttribute("aria-expanded") === "true";
+
+        navLeft.classList.toggle("menu-open", !isOpen);
+        navRight.classList.toggle("menu-open", !isOpen);
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            String(!isOpen)
+        );
+
+    });
+
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth >= 768) {
+            closeMobileMenu();
+        }
+
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(function (link) {
+
+        link.addEventListener("click", closeMobileMenu);
+
+    });
+
+});
+</script>
+
+</body>
+</html>
+
